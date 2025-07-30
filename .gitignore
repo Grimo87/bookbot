@@ -1,2 +1,4 @@
 /books
 changelog.txt
+__pycache__/
+*.pyc
