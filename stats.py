@@ -1,13 +1,12 @@
 def get_word_count(text):
     """Splits the text into words, puts them into a list and returns the number of words"""
-    return(len(text.split()))   # default delimiter for .split() is a whitespace
+    return(len(text.split()))
 
 
 def get_character_count(text):
     """Converts the text into lower case, then adds each character and their respective count to a dictionary"""
-    text_lowercase = text.lower()
     characters_dict = {}
-    for char in text_lowercase:
+    for char in text.lower():
         if char in characters_dict:
             characters_dict[char] += 1
         else:
@@ -20,8 +19,7 @@ def sort_characters(character_count):
     sorted_characters = []
 
     for element in character_count:
-        character = {'char': element, 'num': character_count[element]}
-        sorted_characters.append(character)
+        sorted_characters.append({'char': element, 'num': character_count[element]})
 
     def sort_on(character):
         """Tells the sorting function to use the character count 'num' as key to sort on"""

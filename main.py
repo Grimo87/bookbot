@@ -3,7 +3,6 @@ import stats
 
 
 def main():
-
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
@@ -14,6 +13,7 @@ def main():
     character_count = stats.get_character_count(text)
     sorted_characters = stats.sort_characters(character_count)
     print_book_report(path_to_file, word_count, sorted_characters)
+
 
 def get_book_text(path_to_file):
     """Returns the complete content of the file at the stated path as a string."""
