@@ -10,3 +10,18 @@ def get_character_count(text):
         else:
             characters_dict[char] = 1
     return characters_dict
+
+def sort_characters(character_count):
+    sorted_characters = []
+
+    for element in character_count:
+        count = character_count[element]
+        character = {'char': element, 'num': count}
+        sorted_characters.append(character)
+
+    def sort_on(character):
+        return character['num']
+        
+    sorted_characters.sort(reverse=True, key=sort_on)
+    
+    return sorted_characters
