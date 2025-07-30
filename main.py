@@ -1,20 +1,19 @@
 import sys
-from stats import get_word_count, get_character_count, sort_characters
+import stats
+
 
 def main():
 
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
-
     path_to_file = sys.argv[1]
-    text = get_book_text(path_to_file)
-    word_count = get_word_count(text)
-    character_count = get_character_count(text)
-    sorted_characters = sort_characters(character_count)
-    
-    #print(text)
 
+    text = get_book_text(path_to_file)
+    word_count = stats.get_word_count(text)
+    character_count = stats.get_character_count(text)
+    sorted_characters = stats.sort_characters(character_count)
+    
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {path_to_file}...")
     print("----------- Word Count ----------")
@@ -26,11 +25,12 @@ def main():
             print(f"{element['char']}: {element['num']}")
 
     print("============= END ===============")
-    
+
 
 def get_book_text(path_to_file):
     """Returns the complete content of the file at the stated path as a string."""
     with open(path_to_file) as file:
         return file.read()
+
 
 main()
